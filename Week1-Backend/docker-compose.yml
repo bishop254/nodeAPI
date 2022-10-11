@@ -1,0 +1,23 @@
+version: '3.9'
+
+services:
+  backend:
+    build: .
+    ports:
+      - 6500:6501
+    depends_on:
+      - db
+    restart: on-failure
+    environment:
+      MYSQL_DATABASE: users
+      MYSQL_USER: root
+      MYSQL_PASSWORD: root
+      MYSQL_HOST: db
+
+  db:
+    build: ./db
+    environment:
+      MYSQL_DATABASE: users
+      MYSQL_ROOT_PASSWORD: root
+    restart: always
+
