@@ -1,10 +1,21 @@
 const express = require('express')
 const bills = require('./models/user')
+const cors = require('cors')
 
 const PORT = 6500;
 const app = express()
+
 app.use(express.json());
 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader(
+    "Access-Control-Allow-Methods",
+    "OPTIONS, GET, POST, PUT, PATCH, DELETE" // what matters here is that OPTIONS is present
+  );
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
 
 app.get('/pong', (req, res, next) => {
     res.send({
@@ -24,8 +35,7 @@ app.get('/bills', async (req, res, next) => {
     if (result) {
         res.send({save: true})
     } else {
-
-        res.send({save: true})
+        res.send({save: false})
     }
 })
 

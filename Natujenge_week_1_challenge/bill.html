@@ -1,0 +1,76 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bill.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <title>Bill Manager</title>
+  </head>
+  <body>
+    <header>
+      <a href="index.html">
+        <img
+          src="./img/logo/logo-wordmark.svg"
+          alt="Natujenge Logo"
+        />
+      </a>
+      <div class="links">
+        <a href="https://www.meliora.co.ke/articles/nvrjgtnsgh5ophs6mm"
+          >About</a
+        >
+        <a href="./team.html">Teams</a>
+      </div>
+    </header>
+
+    <div class="mainContainer">
+      <div class="tabs">
+        <a href="./index.html">Tax Calculator</a>
+        <a href="./bill.html">Bill Manager</a>
+      </div>
+      <div class="netSalary">
+        <p>Net Salary</p>
+        <div>
+          <span>KSHS</span>
+          <input type="number" id="netSalary" />
+        </div>
+      </div>
+      <div class="budget">
+        <div class="items" id="items">
+        </div>
+
+        <div class="addExpense">
+          <form id="form">
+            <input type="text" name="expense" id="expense" />
+
+            <input type="number" name="amount" id="amount" />
+            <br />
+            <input type="submit" id="submitBtn" value="Add Expense" />
+          </form>
+        </div>
+
+        <button id="updateDB" >
+          Save to DB
+        </button>
+
+        <div class="balance">
+          <div>
+            <p>Balance</p>
+            <p>Kshs <span id="balance">0</span></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer">
+      <span
+        >Powered By
+        <a href="https://www.meliora.co.ke/articles/nvrjgtnsgh5ophs6mm"
+          >Natujenge</a
+        >
+      </span>
+    </footer>
+
+    <script src="./js/bill.js"></script>
+  </body>
+</html>

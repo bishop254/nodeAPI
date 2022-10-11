@@ -20,4 +20,3 @@ services:
       MYSQL_DATABASE: users
       MYSQL_ROOT_PASSWORD: root
     restart: always
-
